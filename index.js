@@ -23,7 +23,6 @@ var URIdata = []
 var oldURIdata = [];
 
 var app = express();
-const port = 3000;
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(bodyParser.json({ limit: "30MB", extended: true }));
@@ -31,9 +30,6 @@ app.use(bodyParser.urlencoded({ limit: "30MB", extended: true }));
 app.engine("html", require("ejs").renderFile);
 app.use(express.static(path.join(__dirname, "public")));
 
-app.listen(port, () => {
-    console.log("Server started at port " + port);
-});
 
 app.use("/", async (req, res) => {
     res.render("index", {
@@ -84,3 +80,8 @@ fetchDetails();
 setInterval(fetchDetails, 1000 * 60*60);
 
 exports = module.exports = app;
+
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+    console.log("Server started at: http://localhost:" + String(port) + "/");
+});
