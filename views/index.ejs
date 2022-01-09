@@ -42,6 +42,7 @@
                     <th data-field="branch" data-filter-control="select">Branch</th>
                     <th data-field="roll" data-sortable="true">Roll No.</th>
                     <th data-field="score" data-sortable="true">Points</th>
+                    <th data-sortable="true"> Pre Points</th>
                     <th data-field="change">Change (in 24h)</th>
                 </tr>
             </thead>
@@ -64,6 +65,7 @@
                         <td><%= data[i].branch %></td>
                         <td><%= data[i].roll %></td>
                         <td><%= data[i].points %></td>
+                        <td><%= data[i].pre_points %></td>
                         <% if (data[i].change) { %>
                             <td class="bold-green">+ <%= data[i].change %></td>    
                         <% } else { %>
