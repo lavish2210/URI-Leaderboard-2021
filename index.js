@@ -72,7 +72,7 @@ const fetchDetails = () => {
     .catch( (err)=> {
         console.log(err);
     });
-    console.log(URIdata)
+    // console.log(URIdata)
 }
 
 fetchDetails();
