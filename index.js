@@ -76,7 +76,7 @@ const fetchDetails = () => {
 }
 
 fetchDetails();
-setInterval(fetchDetails, 1000 * 60*60);
+// setInterval(fetchDetails, 1000 * 60*60);
 
 exports = module.exports = app;
 
